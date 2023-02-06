@@ -91,33 +91,34 @@
                 <xpath expr="//field[@name='contact_name']" position="attributes">
                     <attribute name="string">Applicant Full Nam</attribute>
                 </xpath>
-<!--                <xpath expr="//field[@name='city']" position="attributes">-->
-<!--                    <attribute name="placeholder">Area</attribute>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='state_id']" position="attributes">-->
-<!--                    <attribute name="placeholder">Governorate</attribute>-->
-<!--                </xpath>-->
-                <!--                <field name="city" placeholder="City" class="o_address_city"/>-->
+                <xpath expr="//field[@name='website']" position="before">
+                    <field name="area_id"/>
+                </xpath>
+
+                <xpath expr="//field[@name='mobile']" position="after">
+                    <field name="new_field_mobile"/>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="second_rm"/>
+                </xpath>
 
                 <xpath expr="//notebook/page[@name='extra']" position="after">
                     <page string="Deal">
                         <group>
                             <group>
-                                <field name="area_id"/>
                                 <field name="date"/>
                                 <field name="deal_status"/>
                                 <field name="Investments_in_millions"/>
                                 <field name="company_type"/>
                                 <field name="year_business"/>
+                                <field name="new_field_id"/>
 
                             </group>
                             <group>
-                                <field name="serial_number"/>
-                                <field name="contact_name_person"/>
                                 <field name="deal_amount"/>
                                 <field name="start_of_production"/>
-                                <field name="how_much"/>
                                 <field name="industry_id"/>
+                                <field name="sales_turn_over"/>
 
                             </group>
                         </group>
