@@ -13,7 +13,7 @@ class capexcontact(models.Model):
 
     date = fields.Date(string="Date", required=False, )
 
-    area_id = fields.Many2one(comodel_name="res.city", string="Area", required=False, )
+    area_area = fields.Many2one(comodel_name="res.city", string="Area", required=False, )
     deal_amount = fields.Float(string='Deal Amount', tracking=True)
     deal_status = fields.Selection(string="Deal Status", selection=[('current', 'Current'), ('new', 'New'), ], required=False, )
     Investments_in_millions = fields.Float(string='Investments In Millions', tracking=True)
@@ -32,7 +32,7 @@ class capexcontact(models.Model):
                                                                            ('10+years', '10+years'), ], required=False, )
 
     industry_id = fields.Many2one(comodel_name="res.partner.industry", string="Company Industry")
-    new_field_id = fields.Many2one(comodel_name="res.country", string="Country", required=False, )
+    country_id = fields.Many2one(comodel_name="res.country", string="Country", required=False, )
     sales_turn_over= fields.Selection(string="Sales Turn Over", selection=[('Below EGP 5 M', 'Below EGP 5 M'),
                                                    ('From EGP 5 M to EGP 10 M', 'From EGP 5 M to EGP 10 M'),
                                                    ('From EGP 20 M to EGP 30 M', 'From EGP 20 M to EGP 30 M'),
