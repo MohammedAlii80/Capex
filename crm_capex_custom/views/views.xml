@@ -29,9 +29,9 @@
                 <xpath expr="//field[@name='contact_name']" position="attributes">
                     <attribute name="string">Applicant Full Nam</attribute>
                 </xpath>
-                <xpath expr="//field[@name='website']" position="before">
+<!--                 <xpath expr="//field[@name='website']" position="before">
                     <field name="area_area"/>
-                </xpath>
+                </xpath> -->
 
                 <xpath expr="//field[@name='mobile']" position="after">
                     <field name="new_field_mobile"/>
