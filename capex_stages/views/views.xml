@@ -166,7 +166,7 @@
                             </group>
                         </group>
                     </page>
-                    <page string="Hold/ Approved" attrs="{'invisible':[('state_stages','!=','capex approval')]}">
+                    <page string="Hold/ Approved/ Declined" attrs="{'invisible':[('state_stages','!=','capex approval')]}">
                         <group>
                             <group>
                                 <field name="capex_status"/>

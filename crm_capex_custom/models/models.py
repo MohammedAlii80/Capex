@@ -18,7 +18,7 @@ class capexcontact(models.Model):
     deal_status = fields.Selection(string="Deal Status", selection=[('current', 'Current'), ('new', 'New'), ], required=False, )
     Investments_in_millions = fields.Float(string='Investments In Millions', tracking=True)
     start_of_production = fields.Date(string="Start Of Production", required=False, )
-    tax_tax = fields.Many2many('ir.attachment',string="Tax", required=True)
+    tax_tax = fields.Binary(string="Tax", required=True)
     company_type = fields.Selection(string="Company Type", selection=[('One-person company (OPC)', 'One-person company (OPC)'), ('Limited laibility company(LLC)', 'Limited laibility company(LLC)'),
                                                                       ('A company limited by shares','A company limited by shares'),
                                                                       ('joint-stock company','joint-stock company'),
