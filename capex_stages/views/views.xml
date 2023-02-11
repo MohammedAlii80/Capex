@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="capex_stages_id" model="ir.ui.view">
+            <field name="name">stages</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='stage_id']" position="replace">
+                    <field name="state_stages" widget="statusbar" options="{'clickable': '1'}"
+                           statusbar_visible="capex stage,financial institution,investigation,credit,risk,committee,capex approval"/>
+                </xpath>
+
+                <xpath expr="//notebook/page[@name='lead']" position="after">
+                    <page string="Corporate File Collection"
+                          attrs="{'invisible':[('state_stages','!=','capex stage')]}">
+                        <group>
+                            <group>
+                                <field name="attachment_att_id"/>
+                                <field name="attachment_attachment_id"/>
+
+                            </group>
+                            <group>
+                                <field name="new_field_date"/>
+
+
+                            </group>
+                        </group>
+
+
+                    </page>
+                    <page string=" Capex Client Approval" attrs="{'invisible':[('state_stages','!=','capex stage')]}">
+                        <group>
+                            <group>
+                                <field name="state_status"/>
+                                <field name="date_da"/>
+
+                            </group>
+                            <group>
+                                <field name="field_text" attrs="{'invisible':[('state_status','!=','declined')]}"/>
+
+                            </group>
+                        </group>
+
+                    </page>
+                    <page string="Agreement Signing" attrs="{'invisible':[('state_stages','!=','capex stage')]}">
+                        <group>
+                            <group>
+                                <field name="attachment_att_capex_id"/>
+                                <field name="new_field_capex"/>
+                            </group>
+                        </group>
+
+                    </page>
+                    <page string="Financial Institution"
+                          attrs="{'invisible':[('state_stages','!=','financial institution')]}">
+                        <group>
+                            <field name="new_field_capex_text"/>
+
+                        </group>
+
+                    </page>
+                    <page string="Investigation Forms" attrs="{'invisible':[('state_stages','!=','investigation')]}">
+                        <group>
+                            <group>
+                                <field name="investigation_forms_date"/>
+                                <field name="investigation_forms_id"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+
+                    </page>
+                    <page string="Inquiries" attrs="{'invisible':[('state_stages','!=','investigation')]}">
+                        <group>
+                            <field name="date_inquires"/>
+                        </group>
+
+                    </page>
+
+                    <page string="Visit" attrs="{'invisible':[('state_stages','!=','investigation')]}">
+                        <group>
+                            <field name="date_visit"/>
+                        </group>
+                    </page>
+
+
+                    <page string="Inquiries" attrs="{'invisible':[('state_stages','!=','credit')]}">
+                        <group>
+                            <group>
+                                <field name="credit_date"/>
+
+                            </group>
+                        </group>
+                    </page>
+
+                    <page string="Visit" attrs="{'invisible':[('state_stages','!=','credit')]}">
+                        <group>
+                            <group>
+                                <field name="inq_date"/>
+
+                            </group>
+                        </group>
+                    </page>
+
+                    <page string="Risk Approval" attrs="{'invisible':[('state_stages','!=','risk')]}">
+                        <group>
+                            <group>
+                                <field name="risk_app_date"/>
+
+                            </group>
+                            <group>
+                                <field name="risk_app_id"/>
+
+
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Risk Inquiries" attrs="{'invisible':[('state_stages','!=','risk')]}">
+                        <group>
+                            <group>
+                                <field name="risk_inq_id"/>
+
+
+                            </group>
+                            <group>
+                                <field name="risk_inq_date"/>
+
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Risk Decline" attrs="{'invisible':[('state_stages','!=','risk')]}">
+                        <group>
+                            <group>
+                                <field name="risk_decine_date"/>
+
+                            </group>
+                            <group>
+                                <field name="new_fidecline"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Committee Meeting Date" attrs="{'invisible':[('state_stages','!=','committee')]}">
+                        <group>
+                            <group>
+                                <field name="meeting_date"/>
+
+                            </group>
+                            <group>
+
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Decisioin" attrs="{'invisible':[('state_stages','!=','committee')]}">
+                        <group>
+                            <group>
+                                <field name="decision_se"/>
+                                <field name="decision"/>
+                            </group>
+                            <group>
+                                <field name="decision_id"/>
+                                <field name="new_decision_text"
+                                       attrs="{'invisible':[('decision_se','!=','declined')]}"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Hold/ Approved" attrs="{'invisible':[('state_stages','!=','capex approval')]}">
+                        <group>
+                            <group>
+                                <field name="capex_status"/>
+                                <field name="approval_date"/>
+                            </group>
+                            <group>
+                                <field name="new_approval_text"
+                                       attrs="{'invisible':[('capex_status','!=','declined')]}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
