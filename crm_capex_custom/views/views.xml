@@ -35,6 +35,9 @@
                  <xpath expr="//field[@name='user_id']" position="before">
                     <field name="area_area"/>
                 </xpath>
+                 <xpath expr="//field[@name='team_id']" position="before">
+                    <field name="second_rm"/>
+                </xpath>
 
                 <xpath expr="//field[@name='mobile']" position="after">
                     <field name="new_field_mobile"/>
