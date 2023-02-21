@@ -1,4 +1,4 @@
-from odoo import api, fields, models,_
+from odoo import api, fields, models,_,tools
 
 class capexcontact(models.Model):
     _inherit = 'crm.lead'
@@ -42,3 +42,42 @@ class capexcontact(models.Model):
                                                    ('From EGP 100 to 200 M', 'From EGP 100 to 200 M'),
                                                    ('More than EGP 200 ', 'More than EGP 200 '),
                                                    ], required=False, )
+
+    tax_number = fields.Char(string="", required=False, )
+
+
+    def _prepare_customer_values(self, partner_name, is_company=False, parent_id=False):
+        """ Extract data from lead to create a partner.
+
+        :param name : furtur name of the partner
+        :param is_company : True if the partner is a company
+        :param parent_id : id of the parent partner (False if no parent)
+
+        :return: dictionary of values to give at res_partner.create()
+        """
+        email_parts = tools.email_split(self.email_from)
+        res = {
+            'name': partner_name,
+            'user_id': self.env.context.get('default_user_id') or self.user_id.id,
+            'comment': self.description,
+            'team_id': self.team_id.id,
+            'parent_id': parent_id,
+            'phone': self.phone,
+            'mobile': self.mobile,
+            'email': email_parts[0] if email_parts else False,
+            'title': self.title.id,
+            'function': self.function,
+            'street': self.street,
+            'street2': self.street2,
+            'zip': self.zip,
+            'city': self.city,
+            'country_id': self.country_id.id,
+            'state_id': self.state_id.id,
+            'website': self.website,
+            'vat': self.tax_number,
+            'is_company': is_company,
+            'type': 'contact'
+        }
+        if self.lang_id:
+            res['lang'] = self.lang_id.code
+        return res
