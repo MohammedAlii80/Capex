@@ -33,10 +33,10 @@ class jsonIntegrateController(http.Controller):
                 area_obj = request.env['res.city'].sudo().create({'name':str(kwargs.get('area_area'))})
                 
 
-            country_obj = request.env['res.country'].sudo().search([('name', '=', kwargs.get('country_id'))])
-
-            if not country_obj:
-                country_obj = request.env['res.country'].sudo().create({'name':str(kwargs.get('country_id'))})
+            # country_obj = request.env['res.country'].sudo().search([('name', '=', kwargs.get('country_id'))])
+            #
+            # if not country_obj:
+            #     country_obj = request.env['res.country'].sudo().create({'name':str(kwargs.get('country_id'))})
 
 
             state_obj= request.env['res.country.state'].sudo().search([('name','=',kwargs.get('state_id'))])
@@ -52,9 +52,9 @@ class jsonIntegrateController(http.Controller):
                     'partner_name': kwargs.get('partner_name'),
                     'function': kwargs.get('function'),
                     'tax_number': kwargs.get('tax_number'),
+                    'deal_amount': kwargs.get('deal_amount'),
                     'industry_id': industry_obj.id,
                     'area_area': area_obj.id,
-                    'country_id': country_obj.id,
                     'state_id': state_obj.id,
                     'type': 'lead',
                     }
@@ -62,11 +62,11 @@ class jsonIntegrateController(http.Controller):
 
 
 
-            data_helpdesk =  {'name': kwargs.get('name'),
-                                'partner_email':kwargs.get('partner_email'),
-                                'description': kwargs.get('description'),
-                                }
-            request.env['helpdesk.ticket'].sudo().create(data_helpdesk)
+            # data_helpdesk =  {'name': kwargs.get('name'),
+            #                     'partner_email':kwargs.get('partner_email'),
+            #                     'description': kwargs.get('description'),
+            #                     }
+            # request.env['helpdesk.ticket'].sudo().create(data_helpdesk)
 
 
             return 'Status Succsfull'
