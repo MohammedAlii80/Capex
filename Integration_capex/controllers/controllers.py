@@ -56,7 +56,7 @@ class jsonIntegrateController(http.Controller):
                     'industry_id': industry_obj.id,
                     'area_area': area_obj.id,
                     'state_id': state_obj.id,
-                    'type': 'lead',
+#                     'type': 'lead',
                     }
             request.env['crm.lead'].sudo().create(data)
 
