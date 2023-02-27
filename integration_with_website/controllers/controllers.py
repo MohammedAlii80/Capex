@@ -29,8 +29,8 @@ class jsonIntegrateController(http.Controller):
                                                                    'full_name':'F'+str(kwargs.get('industry_id')).upper()})
 
             area_obj = request.env['res.city'].sudo().search([('name', '=', kwargs.get('area_area'))])
-            if not area_obj:
-                area_obj = request.env['res.city'].sudo().create({'name':str(kwargs.get('area_area'))})
+#             if not area_obj:
+#                 area_obj = request.env['res.city'].sudo().create({'name':str(kwargs.get('area_area'))})
                 
 
             # country_obj = request.env['res.country'].sudo().search([('name', '=', kwargs.get('country_id'))])
