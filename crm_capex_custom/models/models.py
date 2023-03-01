@@ -13,7 +13,7 @@ class capexcontact(models.Model):
 
     date = fields.Date(string="Date", required=False, )
 
-    area_area = fields.Many2one(comodel_name="res.city", string="Area", required=False ,domain=[('state_id','=','state_id')])
+    area_area = fields.Many2one(comodel_name="res.city", string="Area", required=False ,domain="[('state_id', '=?', state_id)]")
     deal_amount = fields.Float(string='Deal Amount', tracking=True)
     deal_status = fields.Selection(string="Deal Status", selection=[('current', 'Current'), ('new', 'New'), ], required=False, )
     Investments_in_millions = fields.Float(string='Investments In Millions', tracking=True)
