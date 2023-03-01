@@ -13,7 +13,7 @@ class capexcontact(models.Model):
 
     date = fields.Date(string="Date", required=False, )
 
-    area_area = fields.Many2one(comodel_name="res.city", string="Area", required=False, )
+    area_area = fields.Many2one(comodel_name="res.city", string="Area", required=False)
     deal_amount = fields.Float(string='Deal Amount', tracking=True)
     deal_status = fields.Selection(string="Deal Status", selection=[('current', 'Current'), ('new', 'New'), ], required=False, )
     Investments_in_millions = fields.Float(string='Investments In Millions', tracking=True)
@@ -26,14 +26,14 @@ class capexcontact(models.Model):
                                                                       ('Limited Partnership company','Limited Partnership company'),
                                                                       ('Sole proprietorsip','Sole proprietorsip'),
                                                                       ], required=False, )
-    year_business = fields.Selection(string="Year in business", selection=[('1-2years', '1-2years'),
+    year_business = fields.Selection(string="Years in Business", selection=[('1-2years', '1-2years'),
                                                                            ('3-5Years','3-5Years'),
                                                                            ('5-10years','5-10years'),
                                                                            ('10+years', '10+years'), ], required=False, )
 
     industry_id = fields.Many2one(comodel_name="res.partner.industry", string="Company Industry")
     country_id = fields.Many2one(comodel_name="res.country", string="Country", required=False, )
-    sales_turn_over= fields.Selection(string="Sales Turn Over", selection=[('Below EGP 5 M', 'Below EGP 5 M'),
+    sales_turn_over= fields.Selection(string="Sales Turnover", selection=[('Below EGP 5 M', 'Below EGP 5 M'),
                                                    ('From EGP 5 M to EGP 10 M', 'From EGP 5 M to EGP 10 M'),
                                                    ('From EGP 20 M to EGP 30 M', 'From EGP 20 M to EGP 30 M'),
                                                    ('From EGP30M to 40M', 'From EGP30M to 40M'),
