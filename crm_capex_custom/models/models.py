@@ -38,12 +38,12 @@ class capexcontact(models.Model):
     industry_id = fields.Many2one(comodel_name="res.partner.industry", string="Company Industry")
     country_id = fields.Many2one(comodel_name="res.country", string="Country", required=False, )
     sales_turn_over= fields.Selection(string="Sales Turnover", selection=[('Below EGP 5 M', 'Below EGP 5M'),
-                                                   ('From EGP 5 M to EGP 10 M', 'From EGP 5M to EGP 10M'),
-                                                   ('From EGP 20 M to EGP 30 M', 'From EGP 20M to EGP 30M'),
-                                                   ('From EGP30M to 40M', 'From EGP 30M to 40M'),
-                                                   ('From EGP40M to 50M', 'From EGP 40M to 50M'),
-                                                   ('From EGP 50M to 100', 'From EGP 50M to 100M'),
-                                                   ('From EGP 100 to 200 M', 'From EGP 100 to 200M'),
+                                                   ('From EGP 5 M to EGP 10 M', 'From EGP 5M To EGP 10M'),
+                                                   ('From EGP 20 M to EGP 30 M', 'From EGP 20M To EGP 30M'),
+                                                   ('From EGP30M to 40M', 'From EGP 30M To EGP 40M'),
+                                                   ('From EGP40M to 50M', 'From EGP 40M To EGP 50M'),
+                                                   ('From EGP 50M to 100', 'From EGP 50M To EGP 100M'),
+                                                   ('From EGP 100 to 200 M', 'From EGP 100 To EGP 200M'),
                                                    ('More than EGP 200 ', 'More Than EGP 200M '),
                                                    ], required=False, )
 
