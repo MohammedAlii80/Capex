@@ -23,12 +23,12 @@ class capexcontact(models.Model):
     Investments_in_millions = fields.Float(string='Investments In Millions', tracking=True)
     start_of_production = fields.Date(string="Start Of Production", required=False, )
     tax_tax = fields.Binary(string="Tax", required=True)
-    company_type = fields.Selection(string="Company Type", selection=[('One-person company (OPC)', 'One-person company (OPC)'), ('Limited laibility company(LLC)', 'Limited laibility company(LLC)'),
-                                                                      ('A company limited by shares','A company limited by shares'),
-                                                                      ('joint-stock company','joint-stock company'),
-                                                                      ('Partnership company','Partnership company'),
-                                                                      ('Limited Partnership company','Limited Partnership company'),
-                                                                      ('Sole proprietorsip','Sole proprietorsip'),
+    company_type = fields.Selection(string="Company Type", selection=[('one-person company (OPC)', 'One-person company (OPC)'), ('limited laibility company(LLC)','Limited Liability Company (LLC)'),
+                                                                      ('a company limited by shares','A company limited by shares'),
+                                                                      ('joint-stock company','Joint-stock Company'),
+                                                                      ('partnership company','Partnership Company'),
+                                                                      ('limited Partnership company','Limited Partnership Company'),
+                                                                      ('sole proprietorsip','Sole proprietorship'),
                                                                       ], required=False, )
     year_business = fields.Selection(string="Years in Business", selection=[('1-2years', '1-2 Years'),
                                                                            ('3-5Years','3-5 Years'),
