@@ -22,11 +22,11 @@ class jsonIntegrateController(http.Controller):
             print(kwargs)
             industry_obj= request.env['res.partner.industry'].sudo().search([('name','=',kwargs.get('industry_id'))])
             # print(industry_obj.id)
-            if not industry_obj:
+#             if not industry_obj:
 
-                industry_obj=request.env['res.partner.industry'].sudo().create({'name':str(kwargs.get('industry_id')),
-                                                                   'active':True,
-                                                                   'full_name':'F'+str(kwargs.get('industry_id')).upper()})
+#                 industry_obj=request.env['res.partner.industry'].sudo().create({'name':str(kwargs.get('industry_id')),
+#                                                                    'active':True,
+#                                                                    'full_name':'F'+str(kwargs.get('industry_id')).upper()})
 
             area_obj = request.env['res.city'].sudo().search([('name', '=', kwargs.get('area_area'))])
 #             if not area_obj:
