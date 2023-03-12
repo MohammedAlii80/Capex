@@ -43,7 +43,7 @@ class capexcontact(models.Model):
                                                    ('From EGP 30M To EGP 40M', 'From EGP 30M To EGP 40M'),
                                                    ('From EGP 40M To EGP 50M', 'From EGP 40M To EGP 50M'),
                                                    ('From EGP 50M To EGP 100M', 'From EGP 50M To EGP 100M'),
-                                                   ('From EGP 100 To EGP 200M', 'From EGP 100 To EGP 200M'),
+                                                   ('From EGP 100M To EGP 200M', 'From EGP 100M To EGP 200M'),
                                                    ('More Than EGP 200M', 'More Than EGP 200M '),
                                                    ], required=False, )
 
